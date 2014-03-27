@@ -107,6 +107,8 @@ module Janky
         post["Content-Type"] = "application/xml"
         post.body = config
 
+        puts "posting", config
+
         response = http.request(post)
 
         unless response.code == "200"
