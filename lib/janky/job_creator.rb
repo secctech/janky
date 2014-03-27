@@ -110,6 +110,7 @@ module Janky
         response = http.request(post)
 
         unless response.code == "200"
+          puts "ERR: ", response
           Exception.push_http_response(response)
           raise Error, "Failed to create job"
         end
