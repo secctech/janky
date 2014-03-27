@@ -36,11 +36,18 @@ GEM
     eventmachine (1.0.3)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    hipchat (0.14.0)
+      httparty
+    httparty (0.13.0)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.9)
+    json (1.8.1)
     metaclass (0.0.4)
     mocha (0.10.5)
       metaclass (~> 0.0.1)
     multi_json (1.9.0)
+    multi_xml (0.5.5)
     multipart-post (2.0.0)
     mustache (0.99.5)
     mysql2 (0.3.15)
@@ -83,6 +90,7 @@ PLATFORMS
 
 DEPENDENCIES
   database_cleaner (~> 0.6)
+  hipchat (~> 0.4)
   janky!
   mocha (~> 0.10.4)
   mysql2 (~> 0.3.0)

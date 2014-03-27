@@ -1,5 +1,6 @@
 source "http://rubygems.org"
 
-gem "pg", "0.17.1"
+gem "hipchat", "~>0.4"
+gem "pg",      "0.17.1"
 
 gemspec
