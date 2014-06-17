@@ -8,7 +8,7 @@ module Janky
 
         puts "Processing #{build.repo_name}..."
 
-        if branch == "continuous-deployment-testing"
+        if branch == "staging"
           puts "Cloning API..."
 
           `git clone git@github.com:secctech/api.git tmp/api`
