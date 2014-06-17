@@ -214,7 +214,7 @@ module Janky
 
     FileUtils.mkdir_p ".ssh"
 
-    File.open ".ssh/id_rsa", "w" { |f| file.write ENV["DEPLOY_PK"] }
+    File.open(".ssh/id_rsa", "w") { |f| f.write ENV["DEPLOY_PK"] }
 
     `chmod 600 .ssh/id_rsa`
   end
