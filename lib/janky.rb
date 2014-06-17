@@ -219,9 +219,9 @@ module Janky
 
     `chmod 600 .ssh/id_rsa`
 
-    `echo "Host github.com\n\tStrictHostKeyChecking no\n" >> .ssh/config`
+    `echo "Host github.com\n\tStrictHostKeyChecking no\nHost heroku.com\n\tStrictHostKeyChecking no\n" >> .ssh/config`
 
-    # Notifier.setup(Notifier::Deploy)
+    Notifier.setup(Notifier::Deploy)
   end
 
   # List of settings required in production.
