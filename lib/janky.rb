@@ -45,6 +45,7 @@ require "janky/chat_service/mock"
 require "janky/exception"
 require "janky/notifier"
 require "janky/notifier/chat_service"
+require "janky/notifier/deploy"
 require "janky/notifier/mock"
 require "janky/notifier/multi"
 require "janky/notifier/github_status"
@@ -217,6 +218,8 @@ module Janky
     File.open(".ssh/id_rsa", "w") { |f| f.write ENV["DEPLOY_PK"] }
 
     `chmod 600 .ssh/id_rsa`
+
+    Notifier.setup(Notifier::Deploy)
   end
 
   # List of settings required in production.
