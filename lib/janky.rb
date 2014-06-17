@@ -219,7 +219,7 @@ module Janky
 
     `chmod 600 .ssh/id_rsa`
 
-    `echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config`
+    `echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> .ssh/config`
 
     Notifier.setup(Notifier::Deploy)
   end
