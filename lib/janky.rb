@@ -5,6 +5,7 @@ end
 
 require "net/http"
 require "digest/md5"
+require "fileutils"
 
 require "active_record"
 require "replicate"
@@ -210,6 +211,12 @@ module Janky
     else
       Notifier.setup(Notifier::ChatService)
     end
+
+    FileUtils.mkdir_p ".ssh"
+
+    File.open ".ssh/id_rsa", "w" { |f| file.write ENV["DEPLOY_PK"] }
+
+    `chmod 600 .ssh/id_rsa`
   end
 
   # List of settings required in production.
