@@ -221,7 +221,7 @@ module Janky
 
     `echo "Host github.com\n\tStrictHostKeyChecking no\n" >> .ssh/config`
 
-    Notifier.setup(Notifier::Deploy)
+    # Notifier.setup(Notifier::Deploy)
   end
 
   # List of settings required in production.
