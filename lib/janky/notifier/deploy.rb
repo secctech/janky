@@ -2,7 +2,7 @@ module Janky
   module Notifier
     # Continuous Deployment notifier.
     class Deploy
-      def completed(build)
+      def self.completed(build)
         success = build.green?
         branch  = build.branch
 
