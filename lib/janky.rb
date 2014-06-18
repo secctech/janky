@@ -207,10 +207,11 @@ module Janky
     if token = settings["JANKY_GITHUB_STATUS_TOKEN"]
       Notifier.setup([
         Notifier::GithubStatus.new(token, api_url),
-        Notifier::ChatService
+        Notifier::ChatService,
+        Notifier::Deploy
       ])
     else
-      Notifier.setup(Notifier::ChatService)
+      Notifier.setup([Notifier::Deploy, Notifier::ChatService])
     end
 
     FileUtils.mkdir_p ".ssh"
@@ -220,8 +221,6 @@ module Janky
     `chmod 600 .ssh/id_rsa`
 
     `echo "Host github.com\n\tStrictHostKeyChecking no\nHost heroku.com\n\tStrictHostKeyChecking no\n" >> .ssh/config`
-
-    Notifier.setup(Notifier::Deploy)
   end
 
   # List of settings required in production.
